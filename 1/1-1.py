@@ -5,18 +5,18 @@ def fileReadIn(filename): #allows each files to be easily imported
     Temp = []
     Final = []
     for x in FileRead: #formats list to be easily laid out with no \n etc
-        Temp.append(x.strip())    
+        Temp.append(x.strip())
     for y in range(len(Temp)): #separates comma-separated values into individual items in lists
-        Final.append(Temp[y].split(","))        
+        Final.append(Temp[y].split(","))
     return Final
 
-inFile = fileReadIn("1-1.txt")
+inFile = fileReadIn("input.txt")
 sumList = []
 comparison = None
 for current in range(len(inFile[0][0])):
     if inFile[0][0][current] != comparison:
         #print(current)
-        comparison = inFile[0][0][current] 
+        comparison = inFile[0][0][current]
     else:
         sumList.append(inFile[0][0][current])
         #print(sumList)
@@ -25,7 +25,7 @@ for current in range(len(inFile[0][0])):
     except IndexError:
         if inFile[0][0][0] != comparison:
             #print(current)
-            comparison = inFile[0][0][0] 
+            comparison = inFile[0][0][0]
         else:
             sumList.append(inFile[0][0][0])
             #print(sumList)
@@ -35,4 +35,3 @@ for num in sumList:
     total += int(num)
 
 print(total)
-        
