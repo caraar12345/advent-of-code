@@ -37,7 +37,7 @@ for line in sortedFile:
                 if num == item:
                     pass
                 else:
-                    print(num,item,factorList)
+                    #print(num,item,factorList)
                     total += item/num
                     break
 
