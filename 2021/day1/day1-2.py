@@ -3,8 +3,9 @@ inList = importFile.importFile('input.txt')
 incDec = {'inc':0,
           'dec':0}
 
-# TODO: Shift `lasts` to the left
-# append new number, del lasts[0]
+# TODO: 
+# - Shift `lasts` to the left
+# - Append new number, del lasts[0]
 
 lasts = [0,0,0]
 last = 0
@@ -23,7 +24,9 @@ for x in inList:
       incDec['inc'] += 1
     else:
       incDec['dec'] += 1
+    last = current
+    current = 0
 
 
 
-print(incDec['inc'])
+print(incDec['inc']-1)
