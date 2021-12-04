@@ -8,8 +8,16 @@ import (
 	"strconv"
 )
 
+func sumSlice(array []int) int {
+	result := 0
+	for _, v := range array {
+		result += v
+	}
+	return result
+}
+
 func main() {
-	file, err := os.Open("input.txt")
+	file, err := os.Open("../input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,6 +27,7 @@ func main() {
 
 	inc := 0
 	dec := 0
+	lasts := []int{}
 	last := 0
 
 	for lineScanner.Scan() {
@@ -26,12 +35,18 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		if i > last {
+		lasts = append(lasts, i)
+		if len(lasts) < 3 {
+			continue
+		}
+		current := sumSlice(lasts)
+		if current > last {
 			inc = inc + 1
 		} else {
 			dec = dec + 1
 		}
-		last = i
+		last = current
+		lasts = lasts[1:]
 	}
 
 	fmt.Println(inc - 1)
