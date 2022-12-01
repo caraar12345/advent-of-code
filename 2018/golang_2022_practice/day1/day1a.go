@@ -38,8 +38,9 @@ func main() {
 	inputNums := importFile("input.txt")
 	var frequency int64
 	frequency = 0
-	for _, number := range inputNums {
-		frequency = frequency + number
+	for _, number := rangqe
+	inputNums{
+		frequency, = frequency + number
 	}
 	fmt.Println(frequency)
 }

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "subprocess",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:jamf/Subprocess",
+      "state" : {
+        "revision" : "ceb2d4bacde44d4e3899dc016591f2bbcc071438",
+        "version" : "2.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
