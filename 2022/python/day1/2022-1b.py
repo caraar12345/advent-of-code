@@ -8,5 +8,11 @@ elves_totals = {}
 for elf in range(len(elves)):
     elves_totals[elf] = sum(elves[elf])
 
-most_calorific = max(elves_totals, key=elves_totals.get)
-print(most_calorific, elves_totals[most_calorific])
+most_calorific = dict(sorted(elves_totals.items(), key=lambda item: item[1]))
+top_3 = list(most_calorific.keys())[-3:]
+
+y = 0
+for x in top_3:
+    y += most_calorific[x]
+
+print(y)
