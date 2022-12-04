@@ -16,11 +16,11 @@ for pair in lines:
         elfPair.append([int(num) for num in elf.split("-")])
     pairs.append(elfPair)
 
-fullyContainCount = 0
+intersectionCount = 0
 for pair in pairs:
     set1 = {x for x in range(pair[0][0], pair[0][1]+1)}
     set2 = {x for x in range(pair[1][0], pair[1][1]+1)}
-    if set1.issubset(set2) or set2.issubset(set1):
-        fullyContainCount += 1
+    if set1.intersection(set2):
+        intersectionCount += 1
 
-print(fullyContainCount)
+print(intersectionCount)
